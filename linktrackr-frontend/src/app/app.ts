@@ -1,12 +1,28 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { ChangeDetectorRef, Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { ShortLink } from './services/short-link';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [FormsModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('linktrackr-frontend');
+  url: string = '';
+  shortUrl: string = '';
+
+  constructor(
+    private shortLinkService: ShortLink,
+    private cdr: ChangeDetectorRef
+  ) {}
+
+  shorten() {
+    this.shortLinkService.shortenUrl(this.url).subscribe(link => {
+      console.log('resultado: ', link);
+      this.shortUrl = link;
+      this.cdr.detectChanges();
+    })
+  }
+
 }

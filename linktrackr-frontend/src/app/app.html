@@ -1,1 +1,16 @@
-<div>Works!</div>
+<header>
+  <h1>Linktrackr</h1>
+</header>
+<main>
+  <section>
+    <h2>Shorten your URL</h2>
+    <input type="text" [(ngModel)]="url" placeholder="Enter your URL here" />
+    <button (click)="shorten()">Shorten</button>
+    @if (shortUrl) {
+      <div class="result">
+        <p>{{ shortUrl }}</p>
+        <button>Copy</button>
+      </div>
+    }
+  </section>
+</main>
