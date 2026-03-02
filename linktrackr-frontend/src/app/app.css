@@ -1,23 +1,30 @@
 header{
-    background-color: #e4e4e4;
-    color: rgb(19, 70, 117);
+    background-color: #1b263b;
+    color: rgb(255, 255, 255);
     padding: 20px;   
 }
 header h1{
     margin-left: 20px;
+    font-weight: 500;
 }
 main{
     width: 100vw;
     height: 88vh;
+    display: flex;
+    justify-content: center;
 }
 section{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 20px;
-    height: 100%;
-    background-color: #e6e6e6;
-    border-radius: 20px;
+    width: 60%;
+    margin: 50px;
+    height: 50%;
+    background-color: #1b263b;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(50, 228, 235, 0.4), 0 0 20px rgba(50, 228, 235, 0.9);
+    color: white;
 }
 
 section h2{
@@ -26,27 +33,49 @@ section h2{
 }
 
 section input{
-    width: 60%;
-    height: 60px;
-    border-radius: 10px;
-    border: none;
-    padding: 0 10px;
     font-size: 16px;
+    border: none;
+    border-radius: 150px;
+    height: 60px;
+    width: 500px;
+    background-color: #12151a;
+    border: 2px solid rgba(19, 231, 160, 0.8);
+    color: white;
 }
 
 section button{
-    width: 150px;
-    height: 50px;
-    background-color: rgb(19, 70, 117);
-    color: white;
-    border: none;
-    margin-top: 50px;
-    border-radius: 10px;
     font-size: 16px;
+    border: none;
+    border-radius: 150px;
+    height: 60px;
+    width: 120px;
+    background-color: rgba(19, 231, 160, 0.8);
     font-weight: bolder;
-    cursor: pointer;
 }
 
 section button:hover{
-    background-color: rgb(19, 70, 117, 0.8);
+    background-color: rgba(15, 170, 118, 0.8);
+}
+
+.result{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+    cursor: default;
+}
+
+.pop-up{
+    position: fixed;
+    bottom: 20px;
+    background-color: aliceblue;
+    animation: fadeInOut 2s ease forwards;
+}
+
+@keyframes fadeInOut {
+  0%   { opacity: 0; }
+  15%  { opacity: 1; }
+  75%  { opacity: 1; }
+  100% { opacity: 0; }
 }

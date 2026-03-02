@@ -7,7 +7,7 @@
 }
 body{
     height: 100vh;
-    background-color: rgb(75, 75, 75);
+    background-color: #2d2e2e;
 }
 app-root{
     display: flex;

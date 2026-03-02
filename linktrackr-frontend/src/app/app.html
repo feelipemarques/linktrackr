@@ -1,16 +1,32 @@
 <header>
-  <h1>Linktrackr</h1>
+  <h1>LINKTRACKR</h1>
 </header>
 <main>
   <section>
     <h2>Shorten your URL</h2>
-    <input type="text" [(ngModel)]="url" placeholder="Enter your URL here" />
-    <button (click)="shorten()">Shorten</button>
+    <div
+      style="
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+      "
+    >
+      <input type="text" [(ngModel)]="url" placeholder="Enter your URL here" />
+      <button (click)="shorten()">SHORTEN</button>
+    </div>
     @if (shortUrl) {
       <div class="result">
-        <p>{{ shortUrl }}</p>
-        <button>Copy</button>
+        <a>{{ shortUrl }}</a>
+        <button (click)="copyLink()">Copy</button>
       </div>
     }
   </section>
+  @if (copied) {
+    <div class="pop-up">Link copiado com sucesso!</div>
+  }
+  @if (errorMessage) {
+    <div class="pop-up">{{ errorMessage }}</div>
+  }
 </main>
